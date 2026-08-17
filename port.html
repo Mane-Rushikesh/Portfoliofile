@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mane Rushikesh Hanmant | Aspiring Full Stack Developer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#121212',
+                            700: '#1a1a1a',
+                            600: '#262626',
+                        },
+                        accent: {
+                            DEFAULT: '#00f0ff',
+                            purple: '#8a2be2',
+                            blue: '#0070f3'
+                        }
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(0, 240, 255, 0.15)',
+                        'glow-lg': '0 0 30px rgba(138, 43, 226, 0.2)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0a0a0a;
+            color: #f3f4f6;
+        }
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .glass-card {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 240, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #00f0ff 0%, #8a2be2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-dark-950 text-gray-100 antialiased selection:bg-accent selection:text-black">
+
+    <!-- Header / Sticky Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-accent to-accent-purple flex items-center justify-center text-black font-extrabold text-lg shadow-glow group-hover:scale-105 transition-transform">
+                        MR
+                    </div>
+                    <span class="font-bold tracking-wider text-lg">Mane Rushikesh</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#home" class="text-gray-300 hover:text-accent transition-colors">Home</a>
+                    <a href="#about" class="text-gray-300 hover:text-accent transition-colors">About</a>
+                    <a href="#skills" class="text-gray-300 hover:text-accent transition-colors">Skills</a>
+                    <a href="#experience" class="text-gray-300 hover:text-accent transition-colors">Experience</a>
+                    <a href="#projects" class="text-gray-300 hover:text-accent transition-colors">Projects</a>
+                    <a href="#services" class="text-gray-300 hover:text-accent transition-colors">Services</a>
+                    <a href="#contact" class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 hover:border-accent text-accent transition-all duration-300">Contact Me</a>
+                </nav>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="menu-btn" class="md:hidden text-gray-300 hover:text-accent focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-white/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="block py-2 text-gray-300 hover:text-accent">Home</a>
+            <a href="#about" class="block py-2 text-gray-300 hover:text-accent">About</a>
+            <a href="#skills" class="block py-2 text-gray-300 hover:text-accent">Skills</a>
+            <a href="#experience" class="block py-2 text-gray-300 hover:text-accent">Experience</a>
+            <a href="#projects" class="block py-2 text-gray-300 hover:text-accent">Projects</a>
+            <a href="#services" class="block py-2 text-gray-300 hover:text-accent">Services</a>
+            <a href="#contact" class="block py-2 text-accent font-semibold">Contact Me</a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="bg-grid">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+            <div class="absolute -top-40 -left-40 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute top-1/2 -right-40 w-96 h-96 bg-accent-purple/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-mono">
+                        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                        <span>Open to Learning & Opportunities</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+                        Hi, I'm <span class="gradient-text">Mane Rushikesh Hanmant</span>
+                    </h1>
+                    
+                    <p class="text-xl sm:text-2xl font-mono text-gray-400">
+                        Aspiring Full Stack Developer | B.Tech CSE Student
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#projects" class="px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent-purple text-black font-semibold shadow-glow hover:opacity-90 transition-all duration-300">
+                            View My Projects
+                        </a>
+                        <a href="#contact" class="px-6 py-3 rounded-xl glass-card text-gray-200 hover:text-accent hover:border-accent transition-all duration-300">
+                            Contact Me
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center justify-center lg:justify-start space-x-4 pt-4 text-xl">
+                        <span class="text-sm text-gray-500 font-mono">Connect:</span>
+                        <a href="https://www.linkedin.com/in/rushikesh-mane-505169362?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-gray-300 hover:text-accent hover:border-accent transition-all">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Mane-Rushikesh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-gray-300 hover:text-accent hover:border-accent transition-all">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Profile Picture -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-accent to-accent-purple opacity-30 group-hover:opacity-60 blur-xl transition duration-500"></div>
+                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl glass-card overflow-hidden border border-white/10 flex items-center justify-center">
+                            <!-- Professional Avatar Placeholder -->
+                            <div class="absolute inset-0 bg-dark-800 flex flex-col items-center justify-center text-gray-500">
+                                <i class="fa-solid fa-user-astronaut text-7xl text-accent/80 mb-3"></i>
+    
+                                <span class="text-xs font-mono tracking-wider text-gray-400"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">About Me</h2>
+                    <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
+                    <p class="text-gray-400">Get to know more about my background, education, and passions.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6 text-gray-300 leading-relaxed text-base sm:text-lg">
+                        <p>
+                            <strong>Mane Rushikesh Hanmant</strong> is a 3rd-year B.Tech Computer Science and Engineering student at <strong>M.S. Bidve Engineering College, Latur</strong>.
+                        </p>
+                        <p>
+                           I'am an aspiring Full Stack Developer deeply interested in software development, web technologies, machine learning, and emerging technologies. Driven by a continuous learning mindset, I focus on practical project development and creative problem solving.
+                        </p>
+                        <p>
+                            My ultimate goal is converting innovative ideas into useful digital products that provide real-world value and smooth user experiences.
+                        </p>
+                    </div>
+
+                    <!-- Information Card -->
+                    <div class="lg:col-span-5">
+                        <div class="glass-card p-6 sm:p-8 rounded-2xl space-y-6 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full pointer-events-none"></div>
+                            <h3 class="text-xl font-bold border-b border-white/10 pb-4 text-accent">Quick Information</h3>
+                            
+                            <ul class="space-y-4 text-sm sm:text-base font-mono">
+                                <li class="flex justify-between border-b border-white/5 pb-2">
+                                    <span class="text-gray-400">Degree:</span>
+                                    <span class="text-right font-medium">B.Tech in CSE</span>
+                                </li>
+                                <li class="flex justify-between border-b border-white/5 pb-2">
+                                    <span class="text-gray-400">Institution:</span>
+                                    <span class="text-right font-medium text-xs sm:text-sm">M.S. Bidve Engineering College, Latur</span>
+                                </li>
+                                <li class="flex justify-between border-b border-white/5 pb-2">
+                                    <span class="text-gray-400">Current Year:</span>
+                                    <span class="text-right font-medium">3rd Year</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-gray-400">Career Focus:</span>
+                                    <span class="text-right font-medium text-accent">Full Stack Development</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 bg-dark-900/50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Technical Skills</h2>
+                    <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
+                    <p class="text-gray-400">Technologies and tools I work with to build solutions.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Programming Languages -->
+                    <div class="glass-card p-6 rounded-2xl space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h3 class="text-lg font-bold">Programming Languages</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-gray-300">C</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-gray-300">Java</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-gray-300">Python</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-gray-300">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <!-- Frontend -->
+                    <div class="glass-card p-6 rounded-2xl space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
+                                <i class="fa-solid fa-desktop"></i>
+                            </div>
+                            <h3 class="text-lg font-bold">Frontend</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-gray-300">HTML</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-gray-300">CSS</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-gray-300">React.js</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-gray-300">Tailwind CSS</span>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="glass-card p-6 rounded-2xl space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
+                                <i class="fa-solid fa-server"></i>
+                            </div>
+                            <h3 class="text-lg font-bold">Backend</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-gray-300">Node.js</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-gray-300">Express.js</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-gray-300">REST APIs</span>
+                        </div>
+                    </div>
+
+                    <!-- Database -->
+                    <div class="glass-card p-6 rounded-2xl space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <h3 class="text-lg font-bold">Database</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-gray-300">MongoDB</span>
+                        </div>
+                    </div>
+
+                    <!-- Development Tools -->
+                    <div class="glass-card p-6 rounded-2xl space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
+                                <i class="fa-solid fa-toolbox"></i>
+                            </div>
+                            <h3 class="text-lg font-bold">Development Tools</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-gray-300">Git</span>
+                        </div>
+                    </div>
+
+                    <!-- Other Expertise -->
+                    <div class="glass-card p-6 rounded-2xl space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
+                                <i class="fa-solid fa-lightbulb"></i>
+                            </div>
+                            <h3 class="text-lg font-bold">Other Expertise</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-gray-300">Full Stack Development</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-gray-300">Problem Solving</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm font-mono text-gray-300">Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-24 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Experience</h2>
+                    <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
+                    <p class="text-gray-400">My practical industry internship and professional milestones.</p>
+                </div>
+
+                <div class="max-w-3xl mx-auto">
+                    <div class="glass-card p-6 sm:p-8 rounded-2xl relative border-l-4 border-l-accent space-y-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="text-xs font-mono px-3 py-1 rounded-full bg-accent/10 text-accent font-semibold inline-block mb-2">Remote Internship</span>
+                                <h3 class="text-xl sm:text-2xl font-bold">Full Stack Development Intern</h3>
+                                <p class="text-accent font-mono text-sm mt-1">Thiranex</p>
+                            </div>
+                            <div class="text-sm font-mono text-gray-400 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10 w-fit">
+                                <i class="fa-regular fa-calendar-days mr-2"></i>14 Aug 2026 – 13 Sept 2026
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 pt-2">
+                            <h4 class="text-sm font-mono uppercase tracking-wider text-gray-400">Key Responsibilities & Tasks:</h4>
+                            <ul class="space-y-2 text-gray-300 text-sm sm:text-base">
+                                <li class="flex items-start space-x-3">
+                                    <i class="fa-solid fa-circle-check text-accent mt-1.5 text-xs"></i>
+                                    <span>Building responsive frontend features using React.js.</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fa-solid fa-circle-check text-accent mt-1.5 text-xs"></i>
+                                    <span>Developing backend functionality and services using Node.js.</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fa-solid fa-circle-check text-accent mt-1.5 text-xs"></i>
+                                    <span>Working with MongoDB for data persistence and management.</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fa-solid fa-circle-check text-accent mt-1.5 text-xs"></i>
+                                    <span>Contributing actively to practical full-stack development tasks and workflows.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 bg-dark-900/50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Featured Projects</h2>
+                    <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
+                    <p class="text-gray-400">Practical applications and projects built to solve specific challenges.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div class="p-6 sm:p-8 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent text-xl">
+                                    <i class="fa-solid fa-brain"></i>
+                                </div>
+                                <span class="text-xs font-mono text-gray-400">Web System</span>
+                            </div>
+                            <h3 class="text-xl font-bold group-hover:text-accent transition-colors">Scientific Emotions Intervention System</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                “A technology-based project focused on identifying and analyzing emotional states and providing appropriate interventions through a structured digital system.”
+                            </p>
+                            <div class="space-y-2 pt-2">
+                                <span class="text-xs font-mono text-accent uppercase tracking-wider">Highlights</span>
+                                <ul class="text-xs text-gray-300 space-y-1">
+                                    <li>• Emotion identification & analysis concept</li>
+                                    <li>• Technology-based intervention approach</li>
+                                    <li>• Practical web tech application</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-white/5 border-t border-white/10 flex flex-wrap gap-2 items-center justify-between">
+                            <div class="flex gap-1.5">
+                                <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-gray-300">HTML</span>
+                                <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-gray-300">CSS</span>
+                                <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-gray-300">JavaScript</span>
+                            </div>
+                            <span class="text-xs text-gray-500 font-mono">View Details</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div class="p-6 sm:p-8 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-xl bg-accent-purple/10 flex items-center justify-center text-accent-purple text-xl">
+                                    <i class="fa-solid fa-people-group"></i>
+                                </div>
+                                <span class="text-xs font-mono px-2.5 py-1 rounded bg-accent-purple/10 text-accent-purple font-semibold">Team Project</span>
+                            </div>
+                            <h3 class="text-xl font-bold group-hover:text-accent transition-colors">DIPEX Project</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                “A project developed for DIPEX focused on identifying and analyzing emotional states and providing appropriate interventions through a technology-based system.”
+                            </p>
+                            <div class="space-y-2 pt-2">
+                                <span class="text-xs font-mono text-accent uppercase tracking-wider">Highlights</span>
+                                <ul class="text-xs text-gray-300 space-y-1">
+                                    <li>• Team-based project development</li>
+                                    <li>• Emotion analysis concept integration</li>
+                                    <li>• Technology-based intervention system</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-white/5 border-t border-white/10 flex flex-wrap gap-2 items-center justify-between">
+                            <div class="flex gap-1.5">
+                                <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-gray-300">Team Collaboration</span>
+                            </div>
+                            <span class="text-xs text-gray-500 font-mono">View Details</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div class="p-6 sm:p-8 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl">
+                                    <i class="fa-solid fa-briefcase"></i>
+                                </div>
+                                <span class="text-xs font-mono text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded">Career Simulation</span>
+                            </div>
+                            <h3 class="text-xl font-bold group-hover:text-accent transition-colors">HIREBRIDGE 2K26</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                “Contributed to a job interview simulation competition involving resume screening, aptitude testing, group discussion, and personal interview stages.”
+                            </p>
+                            <div class="space-y-2 pt-2">
+                                <span class="text-xs font-mono text-accent uppercase tracking-wider">Key Skills Highlighted</span>
+                                <ul class="text-xs text-gray-300 space-y-1">
+                                    <li>• Career skills & Interview preparation</li>
+                                    <li>• Communication & Teamwork</li>
+                                    <li>• Problem solving capability</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-white/5 border-t border-white/10 flex flex-wrap gap-2 items-center justify-between">
+                            <div class="flex gap-1.5">
+                                <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-gray-300">Simulation Activity</span>
+                            </div>
+                            <span class="text-xs text-gray-500 font-mono">Activity Record</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Services</h2>
+                    <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
+                    <p class="text-gray-400">Specialized capabilities and offerings based on my technical stack.</p>
+                </div>
+
+                <div class="max-w-2xl mx-auto">
+                    <div class="glass-card p-8 sm:p-10 rounded-2xl space-y-6 relative overflow-hidden text-center group">
+                        <div class="absolute -right-20 -bottom-20 w-48 h-48 bg-accent/10 rounded-full blur-2xl pointer-events-none"></div>
+                        <div class="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-2xl mx-auto group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Full Stack Web Development</h3>
+                        <p class="text-gray-400 leading-relaxed text-sm sm:text-base">
+                            Offering comprehensive ability to develop complete, dynamic web applications across both frontend and backend architectures. Focused on building responsive, practical, and scalable web solutions.
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-2 pt-2">
+                            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">React.js</span>
+                            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">JavaScript</span>
+                            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">HTML/CSS</span>
+                            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Tailwind CSS</span>
+                            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Node.js</span>
+                            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Express.js</span>
+                            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">MongoDB</span>
+                            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning & Growth Section -->
+        <section class="py-24 px-4 sm:px-6 lg:px-8 bg-dark-900/50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Learning & Growth</h2>
+                    <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
+                    <p class="text-gray-400">Core areas I am actively exploring to enhance my technical foundation.</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div class="glass-card p-6 rounded-2xl text-center space-y-3 hover:border-accent transition-colors">
+                        <i class="fa-solid fa-code text-accent text-2xl"></i>
+                        <h4 class="font-semibold text-sm">Full Stack Development</h4>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-center space-y-3 hover:border-accent transition-colors">
+                        <i class="fa-solid fa-brain text-accent text-2xl"></i>
+                        <h4 class="font-semibold text-sm">Machine Learning</h4>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-center space-y-3 hover:border-accent transition-colors">
+                        <i class="fa-solid fa-globe text-accent text-2xl"></i>
+                        <h4 class="font-semibold text-sm">Modern Web Technologies</h4>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-center space-y-3 hover:border-accent transition-colors">
+                        <i class="fa-solid fa-microchip text-accent text-2xl"></i>
+                        <h4 class="font-semibold text-sm">Emerging Technologies</h4>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-center space-y-3 hover:border-accent transition-colors col-span-2 sm:col-span-1">
+                        <i class="fa-solid fa-laptop-code text-accent text-2xl"></i>
+                        <h4 class="font-semibold text-sm">Practical Software Dev</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Get In Touch</h2>
+                    <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
+                    <p class="text-gray-400 text-xl font-semibold gradient-text">“Let's Build Something Together.”</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                    <!-- Contact Information Cards -->
+                    <div class="space-y-4">
+                        <div class="glass-card p-5 rounded-xl flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent text-lg flex-shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-mono text-gray-400 block">Email</span>
+                                <span class="font-medium text-sm sm:text-base text-gray-200"><a href="mailto:manerushikesh423@gmail.com" class="font-medium text-sm sm:text-base text-accent hover:underline">manerushikesh423@gmail.com</a></span>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-xl flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent text-lg flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-mono text-gray-400 block">Phone Number</span>
+                                <span class="font-medium text-sm sm:text-base text-gray-200"><a href="Callto:+918265078488" class="font-medium text-sm sm:text-base text-accent hover:underline">+91 8265078488</a></span>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-xl flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent text-lg flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-mono text-gray-400 block">Location</span>
+                                <span class="font-medium text-sm sm:text-base text-gray-200"> <a href="https://maps.google.com/?q=Latur,+Maharashtra,+India" target="_blank" rel="noopener noreferrer" class="font-medium text-sm sm:text-base text-accent hover:underline">Latur, Maharashtra, India</a></span>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-xl flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent text-lg flex-shrink-0">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-mono text-gray-400 block">LinkedIn Profile</span>
+                                <a href="https://www.linkedin.com/in/rushikesh-mane-505169362?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="font-medium text-sm sm:text-base text-accent hover:underline">View linkdin Profile</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Simple Interactive Form Placeholder -->
+                    <div class="glass-card p-6 sm:p-8 rounded-2xl space-y-4">
+                               <h class="text-lg font-bold">Send a Message</h>
+                                <form id="contact-form">
+                                    <div>
+                                         <label class="block text-xs font-mono text-gray-400 mb-1">Enter Your Name</label>
+                                          <input type="text" name="from_name" placeholder="Your Name" required class="w-full bg-dark-800 p-3 rounded-xl border border-gray-700 text-white">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-mono text-gray-400 mb-1">Enter Your Email</label>
+                                            <input type="email" name="from_email" placeholder="example@gmail.com" required class="w-full bg-dark-800 p-3 rounded-xl border border-gray-700 text-white">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-mono text-gray-400 mb-1">Enter Message</label>
+                                            <textarea name="message" rows="4" placeholder="Hello Rushikesh, I'd like to connect..." required class="w-full bg-dark-800 p-3 rounded-xl border border-gray-700 text-white"></textarea>
+                                        </div><button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-accent to-accent-dark text-black font-bold">
+
+                                        Send Message</button>
+                                    </form>
+                                </div>   
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-card border-t border-white/10 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="space-y-1">
+                <h3 class="font-bold text-lg">Mane Rushikesh Hanmant</h3>
+                <p class="text-xs font-mono text-accent">Aspiring Full Stack Developer</p>
+            </div>
+
+            <!-- Quick Navigation Links -->
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+                <a href="#home" class="hover:text-accent transition-colors">Home</a>
+                <a href="#about" class="hover:text-accent transition-colors">About</a>
+                <a href="#skills" class="hover:text-accent transition-colors">Skills</a>
+                <a href="#experience" class="hover:text-accent transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-accent transition-colors">Projects</a>
+                <a href="#services" class="hover:text-accent transition-colors">Services</a>
+                <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+            </div>
+
+            <!-- Socials & Copyright -->
+            <div class="flex flex-col items-center md:items-end space-y-3">
+                <div class="flex space-x-3 text-lg">
+                    <a href="https://www.linkedin.com/in/rushikesh-mane-505169362?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-accent transition-colors">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/Mane-Rushikesh" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-accent transition-colors">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+                <p class="text-xs font-mono text-gray-500">&copy; 2026 Mane Rushikesh Hanmant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+    <!-- EmailJS SDK Script -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+    // Initialize EmailJS with your Public Key
+    (function() {
+        emailjs.init({
+            publicKey: "9iHn1fbFUl3V9NOif",
+        });
+    })();
+
+    // Listen for form submission directly (window.onload hata diya hai)
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Send the form data using your Service ID and Template ID
+        emailjs.sendForm('service_8atptad', 'template_vd4d5n8', this)
+            .then(() => {
+                alert('SUCCESS! Your message has been sent.');
+                document.getElementById('contact-form').reset();
+            }, (error) => {
+                alert('FAILED...' + JSON.stringify(error));
+            });
+    });
+</script>
+</body>
+</html>
